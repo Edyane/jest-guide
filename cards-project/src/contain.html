@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Library</th>
+                <th>Purpose</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@testing-library/react</td>
+                <td>Uses ReactDOM to render a component for testing</td>
+            </tr>
+            <tr>
+                <td>@testing-library/user-event</td>
+                <td>Helps simulate user input like typing and clicking</td>
+            </tr>
+            <tr>
+                <td>@testing-library/dom</td>
+                <td>Helps find elements that are rendered by our components.</td>
+            </tr>
+            <tr>
+                <td>jest</td>
+                <td>Run our tests, report results</td>
+            </tr>
+            <tr>
+                <td>jsdom</td>
+                <td>Simulates a browser when running in a Node environment</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <section>
+        <strong>A Few Questions</strong>
+        <ul>
+            <li>What are those important statements?</li>
+            <li>
+                <span>How were our tests found?</span>
+                <em>Jest finds all files in the src folder that end with: .spce.js, .test.js or are place in a folder called __test__</em>
+            </li>
+            <li>What did al the testing code do?</li>
+        </ul>
+    </section>
+</body>
+</html>
