@@ -3,7 +3,7 @@ Queries
 A super important part of testing is finding the elements 
 that our component has created. 
 
-Need to test form submission? --> You need to click a button
+Need to test form submission? --> You need to find a button
 to click!
 
 Need to test navigation? --> You need to find a link to 
@@ -41,7 +41,7 @@ Matchers from Jest
 expect(['a', 'b']).toHaveLength(2) - makes sure the value is an an array with a particular lenght;
 expect(5).toEqual(5) - makes sure the value equals another value;
 expect(['a', 'b', 'c']).toContain('b') - makes sure an array contains a value, or make sure a string contains another string;
-expect(fn).toThrow() - makes sure a function throws an erro when called;
+expect(fn).toThrow() - makes sure a function throws an error when called;
 expec(mock).toHaveBeenCalled() - makes sure a mock function has been called;
 
 Matchers from React Testing Library 
@@ -54,3 +54,65 @@ expect(element).toHaveValue() - makes sure an input, select, or textarea has a v
 user.click(element) - simulates clicking on the provided element 
 user.keyboard('text') - simulates typing 'text'
 user.keyboard('{Enter}') - simulates pressing the enter key 
+
+Mock functions
+In english 'mock' can meal 'not real';
+Fake function that doesn't do anything;
+Records whenever it gets called, and the arguments it was called with;
+User very often when we need to make sure a component calls a callback;
+
+Normal HTML stuff (not React specific)
+If a labels 'for' attribute matches an inputs 'id', clicking
+on the input will focus the input.
+
+Input can be selected with...
+screen.getByLabelText( /enter email/i)
+screen.getByRole('textBox', { name: /enter email/i })
+
+Most important parts of UserLists 
+Shows one line per user 
+Shows the correct name and email for each user
+
+Memorizing all the query functions to find elements + roles is hard.
+To get help with fiding a particular element, use this helper function:
+screen.logTestingPlaygorundURL()
+Takes the HTML currently rendered by your component and create a link to view tha HTML in the "Testing Playground" tool 
+Testing playground helps you write queries (functions to find elements)
+
+Sometimes finding element by role just doesn't work well 
+Tip - don't obesess over getting the 'right' query
+Two 'escape hatches' ways to find elements when the preferred 'role' approcag doesn't work for work 
+
+data-testid 
+Fallback #1
+
+container.querySelector()
+Fallback #2
+
+
+npx rtl-book serve roles-notes.js
+npx rtl-book serve query-notes.js
+
+
+Looking for a single element?
+getBy, qyeryBy, findBy
+
+Looking for multiple elements?
+getAllBy, queryAllBy, findAllBy
+
+When to use each?
+
+Prove an element exists? getBy, getAllBy
+Prove an element does not exist? queryBy, queryAllBy
+Make sure an element eventually exists? findBy, findAllBy
+
+
+ByRole = finds elements based pn their implicit or explicit ARIA role 
+ByLabelText: find form elements based upon the text their paired labels contain 
+ByPlaceholderText: find form elements based upon their placeholder text 
+ByText: find elements based upon the text they contain 
+ByDisplayValue: find elements based upon their current value 
+ByAllText: find elements based upon their alt attribute 
+ByTitle: find elements based upon their title attribute 
+ByTestId: find elements based upon their daye-testeid attribute 
+
