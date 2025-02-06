@@ -1,4 +1,4 @@
-# 🚀 **React Testing Library and Jest: The Complete Guide** 📚
+# 📚 **React Testing Library and Jest: The Complete Guide** 
 
 A super important part of testing is **finding the elements** that our component has created:
 
